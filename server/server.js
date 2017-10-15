@@ -51,7 +51,7 @@ router.route('/zombies').post(function(req,res){
       if(result) {
         res.json({message: 'authenticated!'});
       } else {
-        res.send({message: "password incorrect"});
+        res.json({message: "password incorrect"});
       }
     });
   });
