@@ -1,0 +1,21 @@
+<form [formGroup]="authForm" (ngSubmit)="submitForm()">
+  <fieldset [disabled]="isSubmitting">
+    <span class="grid cols" style="height:300px;align-items:center">
+      <span style="max-height:50px" *ngIf="authType == 'join'">
+        <input formControlName="username" placeholder="Username" type="text" />
+      </span>
+      <span style="max-height:50px" *ngIf="authType == 'join'" >
+        <input formControlName="inviteCode" placeholder="inviteCode" type="text" />
+      </span>
+      <span style="max-height:50px;">
+        <input formControlName="email" placeholder="Email" type="text" />
+      </span>
+      <span style="max-height:50px">
+        <input formControlName="password" placeholder="Password" type="password" />
+      </span>
+      <span class="grid center" style="max-height:50px">
+        <button class="zombie-button" type="submit" style="min-width:150px;">{{ title }}</button>
+      </span>
+    </span>
+  </fieldset>
+</form>

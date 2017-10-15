@@ -1,0 +1,44 @@
+span { height:100%; width:100%;}
+input { height:100%; width:100%; }
+
+.grid { display:flex;flex-wrap:wrap; }
+.grid.rows.forward { flex-direction: row; } .grid.cols.forward { flex-direction: column; }
+.grid.rows.reverse { flex-direction: row-reverse; } .grid.cols.reverse { flex-direction: column-reverse; }
+.grid.center { justify-content: center; align-content: center; }
+
+.grid.cardAxis_start { justify-content:flex-start; }
+.grid.cardAxis_center { justify-content:center; }
+.grid.cardAxis_end { justify-content:flex-end; }
+.grid.cardAxis_around { justify-content:space-around; }
+.grid.cardAxis_between { justify-content:space-between; }
+
+.grid.oppAxis_start { align-content:flex-start;align-items: flex-start; }
+.grid.oppAxis_center { align-content:center;align-items: center; }
+.grid.oppAxis_end { align-content:flex-end;align-items: flex-end; }
+.grid.oppAxis_around { align-content:space-around; }
+.grid.oppAxis_between { align-content:space-between; }
+
+.grid.RowsOf1 > * { width:calc(100% / 1); } .grid.ColsOf1 > * { height:calc(100% / 1); }
+.grid.RowsOf2 > * { width:calc(100% / 2); } .grid.ColsOf2 > * { height:calc(100% / 2); }
+.grid.RowsOf3 > * { width:calc(100% / 3); } .grid.ColsOf3 > * { height:calc(100% / 3); }
+.grid.RowsOf4 > * { width:calc(100% / 4); } .grid.ColsOf4 > * { height:calc(100% / 4); }
+.grid.RowsOf5 > * { width:calc(100% / 5); } .grid.ColsOf5 > * { height:calc(100% / 5); }
+.grid.RowsOf6 > * { width:calc(100% / 6); } .grid.ColsOf6 > * { height:calc(100% / 6); }
+.grid.RowsOf7 > * { width:calc(100% / 7); } .grid.ColsOf7 > * { height:calc(100% / 7); }
+.grid.RowsOf8 > * { width:calc(100% / 8); } .grid.ColsOf8 > * { height:calc(100% / 8); }
+.grid.RowsOf9 > * { width:calc(100% / 9); } .grid.ColsOf9 > * { height:calc(100% / 9); }
+.grid.RowsOf10 > * { width:calc(100% / 10); } .grid.ColsOf10 > * { height:calc(100% / 10); }
+.grid.RowsOf11 > * { width:calc(100% / 11); } .grid.ColsOf11 > * { height:calc(100% / 11); }
+.grid.RowsOf12 > * { width:calc(100% / 12); } .grid.ColsOf12 > * { height:calc(100% / 12); }
+.grid.RowsOf13 > * { width:calc(100% / 13); } .grid.ColsOf13 > * { height:calc(100% / 13); }
+.grid.RowsOf14 > * { width:calc(100% / 14); } .grid.ColsOf14 > * { height:calc(100% / 14); }
+.grid.RowsOf15 > * { width:calc(100% / 15); } .grid.ColsOf15 > * { height:calc(100% / 15); }
+.grid.RowsOf16 > * { width:calc(100% / 16); } .grid.ColsOf16 > * { height:calc(100% / 16); }
+.grid.RowsOf17 > * { width:calc(100% / 17); } .grid.ColsOf17 > * { height:calc(100% / 17); }
+.grid.RowsOf18 > * { width:calc(100% / 18); } .grid.ColsOf18 > * { height:calc(100% / 18); }
+.grid.RowsOf19 > * { width:calc(100% / 19); } .grid.ColsOf19 > * { height:calc(100% / 19); }
+.grid.RowsOf20 > * { width:calc(100% / 20); } .grid.ColsOf20 > * { height:calc(100% / 20); }
+
+.zombie-button {
+  background-color: #242; color:lightgray; padding:10px; border: solid thick lightgray;
+}
