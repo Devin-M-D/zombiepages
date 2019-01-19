@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -20,16 +20,12 @@ export class ZombieService {
 
   constructor (
     private apiService: ApiService,
-    private http: Http
+    private http: HttpClient
   ) {}
 
   authorize(type, credentials){
     let route = (type === 'join') ? '/create' : '';
-    return this.apiService.post('/zombies' + route, {user: credentials})
-    .map(
-      data => {
-        return data;
-      }
-    );
+    return this.apiService.post('/zombies' + route, {user: credentials});
+    // .map(data => {return data;});
   }
 }

@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
+import { AuthComponent } from './auth/auth.component';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { HeaderComponent } from './layout/header/header.component';
 
 import {
   HeaderComponent,
@@ -12,22 +14,22 @@ import {
   ZombieService
 } from './shared';
 
-const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: true})
-
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    AuthComponent,
+    HeaderComponent
   ],
   imports: [
-    AuthModule,
     BrowserModule,
-    rootRouting
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ApiService,
     ZombieService
-],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClient,
     RouterModule
   ],
   declarations: [
@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClient,
     RouterModule
   ]
 })

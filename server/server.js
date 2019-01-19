@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 var bcrypt = require('bcrypt');
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8081;
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost/zombiepages');
 
@@ -30,11 +30,11 @@ router.route('/zombies/create').post(function(req, res){
   z.name = req.body.user.username;
   z.email = req.body.user.email;
   bcrypt.hash(req.body.user.password, 10, function(err, hash) {
-    if (err) { res.send(err); }
+    if (err) { console.log(err); }
     else{
       z.password = hash;
       z.save(function (saveErr){
-        if (saveErr) { res.send(saveErr); }
+        if (saveErr) { res.json(saveErr); }
         res.json({message: "new zombie infected!", profile: z});
       });
     }
@@ -42,6 +42,7 @@ router.route('/zombies/create').post(function(req, res){
 });
 
 router.route('/zombies').post(function(req,res){
+  console.log(req.body);
   Zombie.find({email: req.body.user.email}, function(err, zombie) {
     if (err) { res.send(err); }
     var pw = zombie[0].password;

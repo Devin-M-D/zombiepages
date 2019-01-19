@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Headers, Http, Response, URLSearchParams } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+//import { Headers, Http, Response, URLSearchParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -8,15 +9,15 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ApiService {
   constructor(
-    private http: Http
+    private http: HttpClient
   ) {}
 
-  private setHeaders(): Headers {
+  private setHeaders(): HttpHeaders {
     let headersConfig = {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     };
-    return new Headers(headersConfig);
+    return new HttpHeaders(headersConfig);
   }
 
   private formatErrors(error: any){
@@ -25,7 +26,9 @@ export class ApiService {
 
   post(path: string, body: Object = {}): Observable<any> {
     return this.http.post(`${environment.api_url}${path}`, JSON.stringify(body), { headers: this.setHeaders() })
-    .catch(this.formatErrors)
-    .map((res:Response) => res.json());
+    .catch((err: HttpErrorResponse) => {
+      console.log(err);
+      return Observable.throw(err);
+    });
   }
 }
